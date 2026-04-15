@@ -6,20 +6,49 @@ Give it a repo with sprawling docs, a mega-README, or a `docs/` folder full of m
 
 ## Install
 
+<details>
+<summary><b>Claude Code (recommended)</b></summary>
+
+**Marketplace install:**
+
+```
+/plugin marketplace add anneKsiy/diataxis-documentation-restructurer
+/plugin install diataxis-documentation-restructurer@diataxis-documentation-restructurer
+```
+
+> **SSH errors?** The marketplace clones repos via SSH. If you don't have SSH keys set up on GitHub, either [add your SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) or switch to HTTPS for fetches only:
+> ```bash
+> git config --global url."https://github.com/".insteadOf "git@github.com:"
+> ```
+
+**Local / development:**
+
+```bash
+git clone https://github.com/anneKsiy/diataxis-documentation-restructurer.git
+claude --plugin-dir /path/to/diataxis-documentation-restructurer
+```
+
+</details>
+
+<details>
+<summary><b>Manually/other</b></summary>
+
 Download the latest `.skill` file from [Releases](../../releases) and add it to your Claude skills:
 
 - **Claude Code:** Place the `.skill` file in your project or user skills directory
 - **Claude.ai:** Upload the `.skill` file in your project settings
 
+</details>
+
 ## What it does
 
 Point the skill at a repo's documentation and it will:
 
-1. **Inventory** every doc file, noting what each covers and whether it mixes purposes
-2. **Classify** each section (not just each file) into the four Diátaxis types — tutorials, how-to guides, reference, and explanation
-3. **Propose** a new folder structure with a migration plan, gap analysis, and ADR recommendations
-4. **Execute** the restructuring once you approve — splitting mixed-purpose files, adding cross-references, and slimming the README into a signpost
-5. **Sanity-check** the result against a set of reader-experience questions
+1. Inventory every doc file, noting what each covers and whether it mixes purposes
+2. Classify each section (not just each file) into the four Diátaxis types — tutorials, how-to guides, reference, and explanation
+3. Propose a new folder structure with a migration plan, gap analysis, and ADR recommendations
+4. Execute the restructuring once you approve — splitting mixed-purpose files, adding cross-references, and slimming the README into a signpost
+5. Sanity-check the result against a set of reader-experience questions
 
 The skill triggers on prompts like "restructure these docs", "this README is a mess", "help me organize our documentation", "audit the docs in this repo", or any mention of Diátaxis by name.
 
@@ -56,7 +85,7 @@ repo/
 
 ## Principles
 
-The skill follows a few key principles beyond the base Diátaxis model:
+The skill follows a few principles beyond the base Diátaxis model:
 
 **Pragmatic, not dogmatic.** Diátaxis is a compass, not a constitution. Small repos won't get forced into four empty folders. A 150-line README for a focused CLI tool might be perfectly fine as-is — the skill will say so.
 
@@ -84,7 +113,7 @@ diataxis-documentation-restructurer/
 
 This skill was born from frustration with documentation content sprawl — large READMEs that are difficult to follow, random docs placed in a `docs/` folder with no real structure, files that outgrow their initial filename and intent.
 
-[Diátaxis](https://diataxis.fr) (by Daniele Procida) provides a framework for thinking about this problem. It identifies four kinds of documentation — tutorials, how-to guides, reference, and explanation — each serving a different user need at a different moment. The real value isn't in rigid taxonomy; it's in simplifying how we think about writing docs. As one commenter on the [Hacker News thread](https://news.ycombinator.com) put it:
+[Diátaxis](https://diataxis.fr) (by Daniele Procida) provides a framework for thinking about this problem. It identifies four kinds of documentation — tutorials, how-to guides, reference, and explanation — each answering a different question a reader might have. The real value isn't in rigid taxonomy; it's in simplifying how we think about writing docs. As one commenter on the [Hacker News thread](https://news.ycombinator.com) put it:
 
 > Diátaxis is a great way to structure documentation, but I think its real value is in simplifying how we think about writing docs. It shifts the focus from trying to cram everything into one 'perfect document' to recognizing that different users have different needs.
 

@@ -1,0 +1,20 @@
+{
+  "name": "diataxis-documentation-restructurer",
+  "owner": {
+    "name": "Abdullah Adam",
+    "url": "https://github.com/anneKsiy"
+  },
+  "metadata": {
+    "description": "A Claude skill that analyzes and restructures existing technical documentation using the Diátaxis framework as a pragmatic thinking tool."
+  },
+  "plugins": [
+    {
+      "name": "diataxis-documentation-restructurer",
+      "source": {
+        "source": "github",
+        "repo": "anneKsiy/diataxis-documentation-restructurer"
+      },
+      "description": "A Claude skill that analyzes and restructures existing technical documentation using the Diátaxis framework as a pragmatic thinking tool."
+    }
+  ]
+}

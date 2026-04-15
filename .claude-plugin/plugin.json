@@ -1,0 +1,11 @@
+{
+  "name": "diataxis-documentation-restructurer",
+  "description": "A Claude skill that analyzes and restructures existing technical documentation using the Diátaxis framework as a pragmatic thinking tool.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Abdullah Adam"
+  },
+  "homepage": "https://github.com/anneKsiy/diataxis-documentation-restructurer",
+  "repository": "https://github.com/anneKsiy/diataxis-documentation-restructurer",
+  "license": "MIT"
+}
